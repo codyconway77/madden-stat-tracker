@@ -23,9 +23,10 @@ class App extends React.Component {
     this.renderPlayers();
   }
 
+  baseUrl = process.env.baseUrl || "http://localhost:3000/games"
   renderGames = async() => {
     try {
-      let res = await axios.get('http://localhost:3000/games');
+      let res = await axios.get(baseUrl);
       let games = res.data;
       //RE render the view with new data
       this.setState({
@@ -38,7 +39,7 @@ class App extends React.Component {
 
   renderPlayers = async() => {
     try {
-      let res = await axios.get('http://localhost:3000/players');
+      let res = await axios.get(baseUrl);
       let players = res.data;
       this.setState({
         Players: players.map(player => player)

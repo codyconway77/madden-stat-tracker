@@ -102,5 +102,5 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 //Start listening to server
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 8000
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}.`));
