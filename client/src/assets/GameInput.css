@@ -1,0 +1,34 @@
+.input-form-container {
+    display: flex;
+    height: 97vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-form {
+    display: flex;
+    background-color: #3e3636;
+    width: 40vw;
+    height: 70vh;
+    min-height: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.wrap-inputs {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.input-column {
+    font-size: large;
+}
+
+input[type=button], input[type=submit] {
+    width: 100%;
+}
