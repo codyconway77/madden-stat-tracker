@@ -25,7 +25,7 @@ class App extends React.Component {
 
   renderGames = async() => {
     try {
-      let res = await axios.get('/games');
+      let res = await axios.get('https://madden-stat-tracker.herokuapp.com/games');
       let games = res.data;
       //RE render the view with new data
       this.setState({
@@ -38,7 +38,7 @@ class App extends React.Component {
 
   renderPlayers = async() => {
     try {
-      let res = await axios.get('/players');
+      let res = await axios.get('https://madden-stat-tracker.herokuapp.com/players');
       let players = res.data;
       this.setState({
         Players: players.map(player => player)
