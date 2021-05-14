@@ -32,7 +32,7 @@ class App extends React.Component {
         Games: games.map(game => game)
       });
     } catch (err) {
-      console.log(err);
+      console.log(err.message);
     }
   }
 
@@ -44,8 +44,8 @@ class App extends React.Component {
       this.setState({
         Players: players.map(player => player)
       });
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      console.log(error.message);
     }
   }
 
