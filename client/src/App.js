@@ -40,11 +40,12 @@ class App extends React.Component {
     try {
       let res = await axios.get('/api/players');
       let players = res.data;
+      console.log(players);
       this.setState({
         Players: players.map(player => player)
       });
     } catch (err) {
-      console.log(err.response.data.message);
+      console.log(err);
     }
   }
 
