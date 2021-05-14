@@ -44,7 +44,7 @@ class App extends React.Component {
         Players: players.map(player => player)
       });
     } catch (err) {
-      console.log(err);
+      console.log(err.response.data.message);
     }
   }
 
