@@ -35,17 +35,17 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 //Import Routes
-const gamesRoute = require('./routes/games');
-const playersRoute = require('./routes/players');
-const usersRoute = require('./routes/users');
+const gamesRoute = require('./routes/api/games');
+const playersRoute = require('./routes/api/players');
+const usersRoute = require('./routes/api/users');
 //const authRoute = require('./routes/auth');
 //const loginRoute = require('./routes/login');
 //const registerRoute = require('./routes/register');
 
 //Use Routes
-app.use('/games', gamesRoute);
-app.use('/players', playersRoute);
-app.use('/users', usersRoute);
+app.use('/api/games', gamesRoute);
+app.use('/api/players', playersRoute);
+app.use('/api/users', usersRoute);
 //app.use('/auth', authRoute);
 //app.use('/login', loginRoute);
 //app.use('/register', registerRoute);
