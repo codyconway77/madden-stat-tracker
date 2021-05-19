@@ -80,12 +80,12 @@ app.post("/login", (req, res, next) => {
       }
     });
   });
-  app.get("/user", (req, res) => {
+  /* app.get("/user", (req, res) => {
     res.send(req.user); // The req.user stores the entire user that has been authenticated inside of it.
-  });
-app.get('/', (req, res) => {
+  }); */
+/* app.get('/', (req, res) => {
     res.send('We are home');
-})
+}) */
 
 /* app.post'/login', (req, res) => {
     //Authenticate user
