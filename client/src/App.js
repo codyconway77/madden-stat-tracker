@@ -25,7 +25,12 @@ class App extends React.Component {
   }
 
   renderGames = async() => {
-      let res = await axios.get('/api/games')
+      await axios.get('/api/games')
+        .then((response) => {
+          this.setState({
+            Games: response.data.map(game => game)
+          });
+        })
         .catch(function(error) {
           if (error.response) {
             console.log(error.response.data);
@@ -38,11 +43,9 @@ class App extends React.Component {
           }
           console.log(error.config);
         });
-      let games = res.data;
+      //let games = res.data;
       //RE render the view with new data
-      this.setState({
-        Games: games.map(game => game)
-      });
+      
     } 
 
   renderPlayers = async() => {
