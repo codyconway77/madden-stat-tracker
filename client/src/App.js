@@ -57,7 +57,7 @@ class App extends React.Component {
             Players: data.map(player => player)
           });
         })
-        .catch((error) => console.log(error.toJSON()));
+        .catch((error) => console.log(error));
   }
 
   
