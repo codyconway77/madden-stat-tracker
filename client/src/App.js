@@ -15,7 +15,8 @@ class App extends React.Component {
     super()
     this.state = {
       Games: [],
-      Players: []
+      Players: [],
+      Errors: []
     }
   }
   componentDidMount() {
@@ -25,7 +26,19 @@ class App extends React.Component {
 
   renderGames = async() => {
     try {
-      let res = await axios.get('/api/games');
+      let res = await axios.get('/api/games')
+        .catch(function(error) {
+          if (error.response) {
+            console.log(error.response.data);
+            console.log(error.response.status);
+            console.log(error.response.headers);
+          } else if (error.request) {
+            console.log(error.request);
+          } else {
+            console.log('Error', error.message);
+          }
+          console.log(error.config);
+        });
       let games = res.data;
       //RE render the view with new data
       this.setState({
@@ -38,7 +51,8 @@ class App extends React.Component {
 
   renderPlayers = async() => {
     try {
-      let res = await axios.get('/api/players');
+      let res = await axios.get('/api/players')
+        .catch((error) => console.log(error.toJSON()));
       let players = res.data;
       console.log(players);
       this.setState({
