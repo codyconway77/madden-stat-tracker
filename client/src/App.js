@@ -25,7 +25,6 @@ class App extends React.Component {
   }
 
   renderGames = async() => {
-    try {
       let res = await axios.get('/api/games')
         .catch(function(error) {
           if (error.response) {
@@ -44,13 +43,9 @@ class App extends React.Component {
       this.setState({
         Games: games.map(game => game)
       });
-    } catch (err) {
-      console.log(err.message);
-    }
-  }
+    } 
 
   renderPlayers = async() => {
-    try {
       let res = await axios.get('/api/players')
         .catch((error) => console.log(error.toJSON()));
       let players = res.data;
@@ -58,9 +53,6 @@ class App extends React.Component {
       this.setState({
         Players: players.map(player => player)
       });
-    } catch (error) {
-      console.log(error.message);
-    }
   }
 
   
